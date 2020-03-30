@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0502)https://pamal.org/miedit/minitel-real-viewer.html?cstream=DAeA.AghBwDYAqACASAATAIRglqSwHkBNAggBQEkBRAZUjLiWQA1MGcWwAZbJgczABZXigEA5EcgEFJAsrLABFBQCUFNBfAUBVBRgBGsALqwA4qbXxtFeEIwBGAHSmAhgCcAJgFNEHgOReAHYAZi6BAC4AzmBiGABMjjQA9gCu4QCWQYiRAMZJADYu6W5eYAQYAMyOggCYGEEufKVkGAAszu7evn5h6QC2LikAHkoYAKyOEOldg0OIAA5uSTkAFl7RKhgedV7zQR5hUUIAagBsjoiCSYGIeX3z4aVixwDsF4LriCWRXm4Abi4MtdogRjgAOd6fPrrSKNdZgMjHACcFxoPm29TygUCXhyjzcYAAYhg4CZ4LBUJFkF4ALAAKAZAEgqbS6QBoNmMtn4AA6ZmO6Xy.R8qVuSS68ySkXCLnyAC5EI5kAR6YylV4gA -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Minitel real viewer</title>
+    <link rel="stylesheet" href="./css/minitel-real-viewer.css">
+  </head>
+  <body cz-shortcut-listen="true">
+    <div id="minitel-viewer">
+      <x-minitel data-speed="1200" data-color="true">
+        <canvas class="minitel-screen" data-minitel="screen" width="320" height="250"></canvas>
+
+        <audio class="minitel-beep" data-minitel="beep">
+          <source src="sound/minitel-bip.mp3" type="audio/mpeg">
+          Too bad, your browser does not support HTML5 audio or mp3 format.
+        </audio>      
+      </x-minitel>
+      <div id="minitel-glass"></div>
+    </div>
+
+    <script src="./javascript/generichelper.js"></script>
+    <script src="./javascript/query-parameters.js"></script>
+    <script src="./javascript/finite-stack.js"></script>
+    <script src="./javascript/lz-string.js"></script>
+    <script src="./javascript/settings-suite.js"></script>
+
+    <script src="./javascript/constant.js"></script>
+    <script src="./javascript/text-grid.js"></script>
+    <script src="./javascript/char-size.js"></script>
+    <script src="./javascript/elements.js"></script>
+    <script src="./javascript/protocol.js"></script>
+    <script src="./javascript/stream.js"></script>
+    <script src="./javascript/start-emulators.js"></script>
+
+    <script src="./javascript/font-sprite.js"></script>
+    <script src="./javascript/page-cell.js"></script>
+    <script src="./javascript/vram.js"></script>
+    <script src="./javascript/vdu-cursor.js"></script>
+    <script src="./javascript/vdu.js"></script>
+    <script src="./javascript/decoder.js"></script>
+    <script src="./javascript/minitel-emulator.js"></script>
+    <script src="./javascript/start-emulators.js"></script>
+    
+    <script src="./javascript/minitel-viewer.js"></script>
+  
+
+</body></html>
