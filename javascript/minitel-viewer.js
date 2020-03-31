@@ -20,7 +20,6 @@ window.addEventListener("load", function() {
     }
 
     for(let i = 0; i < stream.length; i++) {
-        console.log(stream.charCodeAt(i));
         emulator.send([stream.charCodeAt(i)])
     }
 
@@ -33,7 +32,7 @@ function sendToEmulator(char) {
 let keyPressed = [];
 
 function endOfKeyPressed() {
-    if (keyPressed.length < 57) {
+    if (keyPressed.length < 58) {
 
         sendToEmulator(14);
         sendToEmulator(27);
@@ -62,7 +61,7 @@ document.onkeydown = function(evt) {
         alert("Happy April Fools Day");
     }
     if (charCode === 32) {
-        // Spance
+        // Space
         keyPressed.push(String.fromCharCode(32));
         sendToEmulator(32); // Space
         endOfKeyPressed();
@@ -70,13 +69,17 @@ document.onkeydown = function(evt) {
     if (charCode === 8) {
         // Backspace
         if (keyPressed.length > 0) {
-
-            sendToEmulator(46); // Dot
-            sendToEmulator(8); // Move left
-            sendToEmulator(8); // Move left
-            endOfKeyPressed();
+            if (keyPressed.length == 58) {
+                sendToEmulator(8); // Move left
+                sendToEmulator(46); // Dot
+                sendToEmulator(8); // Move left
+            } else {
+                sendToEmulator(46); // Dot
+                sendToEmulator(8); // Move left
+                sendToEmulator(8); // Move left
+            }
             keyPressed.pop();
+            endOfKeyPressed();
         }
     }
-
 };
