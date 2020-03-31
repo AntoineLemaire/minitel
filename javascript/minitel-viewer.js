@@ -45,26 +45,41 @@ function endOfKeyPressed() {
     }
 }
 
+let majuscule = false;
+
+document.onkeyup = function(evt) {
+    evt = evt || window.event;
+    var charCode = evt.keyCode || evt.which;
+
+    if (charCode === 16) {
+        majuscule = false;
+    }
+};
+
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
-    // console.log(charCode);
-    if (65 <= charCode && charCode <= 90) {
+
+    if (charCode === 32 || (65 <= charCode && charCode <= 90)) {
+        // 32 is space, 65 to 90 is text
+
+        let addition = 0;
+        if (!majuscule && (65 <= charCode && charCode <= 90)) {
+            addition = 32;
+        }
+
         if (keyPressed.length < 58) {
-            keyPressed.push(String.fromCharCode(charCode));
-            sendToEmulator(parseInt(charCode));
+            keyPressed.push(String.fromCharCode(charCode+addition));
+            sendToEmulator(parseInt(charCode+addition));
             endOfKeyPressed()
         }
+    }
+    if (charCode === 16) {
+        majuscule = true;
     }
     if (charCode === 13) {
         // Enter
         alert("Happy April Fools Day");
-    }
-    if (charCode === 32) {
-        // Space
-        keyPressed.push(String.fromCharCode(32));
-        sendToEmulator(32); // Space
-        endOfKeyPressed();
     }
     if (charCode === 8) {
         // Backspace
